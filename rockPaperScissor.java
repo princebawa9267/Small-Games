@@ -18,14 +18,13 @@ class RPS  //Rock Paper Scissor
         System.out.println("Enter : \nR for Rock \nP for Paper \nS for Scissor");
         for(int i = 0 ; i< Matches ; i++)  //Run until until the number of matches not achieve
         {
-            System.out.println("Enter the input : ");
             createOutput();  //Call funtion to generate the random from Rock, Paper,Scissor
             takeInput(); //Take input from the user
         }
         // Tell Score of the User and Computer
         System.out.println("\n\n\n");
-        System.out.printf("********************* Your Score is  %d *********************\n",userScore);
-        System.out.printf("****************** Computer Score is  %d ******************\n",computerScore);
+        System.out.printf(" ********************* Your Score is  %d *********************\n",userScore);
+        System.out.printf("******************** Computer Score is  %d ********************\n\n",computerScore);
     }
     void createOutput()
     {
@@ -34,6 +33,7 @@ class RPS  //Rock Paper Scissor
     }
     void takeInput()
     {
+        System.out.print("\nEnter the input : ");
         userInput = sc.next().charAt(0);
         userInput = Character.toUpperCase(userInput);
         //Condition where User won the match
@@ -84,7 +84,7 @@ class RPS  //Rock Paper Scissor
 }
 public class rockPaperScissor {
     public static void main(String[] args) {
-        System.out.println("****************************** Welcome to game Rock, Paper,Scissor ******************************");
+        System.out.println("\n\n\n********************************** Welcome to game Rock, Paper, Scissor **********************************\n\n");
         RPS game = new RPS();
         game.playGame();
     }
