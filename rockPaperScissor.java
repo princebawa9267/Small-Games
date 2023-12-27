@@ -6,9 +6,11 @@ class RPS  //Rock Paper Scissor
     private int userScore = 0;  //Initial User score is Zero 
     private char Output ; // Computer output variable
     private int computerScore = 0;  //Initial Computer score is Zero
+    private String displayUserInput , displayComputerOutput;
     Scanner sc = new Scanner(System.in);
     Random Rand = new Random();
     String Alphabet = "RPS" ; //This String will be used to generate random from R (Rock),P (Paper) and S (Scissor)
+
     public void playGame()
     {
         //Total number of matches that user want to play
@@ -26,11 +28,36 @@ class RPS  //Rock Paper Scissor
         System.out.printf(" ********************* Your Score is  %d *********************\n",userScore);
         System.out.printf("******************** Computer Score is  %d ********************\n\n",computerScore);
     }
+
     void createOutput()
     {
         //This will generate random from R,P,S
         Output = Alphabet.charAt(Rand.nextInt(Alphabet.length()));
     }
+
+    String Conversion(char character)
+    {
+        if(character == 'R') 
+        {
+            return "Rock";
+        }
+        else if(character == 'P')
+        {
+            return "Paper";
+        }
+        else
+        {
+            return "Scissor";
+        }
+    }
+
+    void forDisplay(char userInput, char Output)
+    {
+        displayUserInput = Conversion(userInput);
+        displayComputerOutput = Conversion(Output);
+        System.out.println("Your's " + displayUserInput + " and Computer's "+displayComputerOutput );
+    }
+
     void takeInput()
     {
         System.out.print("\nEnter the input : ");
@@ -47,7 +74,7 @@ class RPS  //Rock Paper Scissor
         if((userInput == 'R' && Output == 'S') || (userInput == 'P' && Output == 'R') ||( userInput == 'S' && Output == 'P' ))
         {
             System.out.println("You Won the Game");
-            System.out.println("Computer Output "+Output);
+            forDisplay(userInput, Output);
             userScore++;
         }
         //Condition where Computer won the match
@@ -61,7 +88,7 @@ class RPS  //Rock Paper Scissor
         else if((userInput == 'R' && Output == 'P') || (userInput == 'P' && Output == 'S') ||( userInput == 'S' && Output == 'R' ))
         {
             System.out.println("You Loss the Game");
-            System.out.println("Computer Output "+Output);
+            forDisplay(userInput, Output);
             computerScore++;
         }
         //Match will Draw when User and Computer have the same choose
