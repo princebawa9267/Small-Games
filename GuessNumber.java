@@ -39,12 +39,12 @@ class GuessKaro
         //Tell whether number is greater than Computer generated number
         if(Correction>randomNumber)
         {
-            System.out.println("Entered number is Greater than Orignal number\n");
+            System.out.println("Enter any another number smaller than "+ Correction +" \n");
         }
         //Tell whether number is smaller than Computer generated number
         else
         {
-            System.out.println("Entered number is Smaller than Orignal number\n");
+            System.out.println("Enter any another number greater than " + Correction + "\n");
         }
     }
 
@@ -52,7 +52,8 @@ class GuessKaro
 public class GuessNumber {
 
     public static void main(String[] args)
-    {        
+    {      
+        System.out.println("\n\n\n********************************** Welcome to Guess the Number game **********************************\n\n");  
         GuessKaro GK = new GuessKaro();  //Creating an instance of Class-> GK
         GK.enterNumber(); //Function call
     }
